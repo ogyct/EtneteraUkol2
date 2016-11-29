@@ -1,0 +1,9 @@
+Úkolem je tento projekt (viz příloha) rozběhat a pak
+
+- přidat k produktu sériové číslo
+
+- přidat možnost zadávat nové produkty a měnit existující
+
+- přidat fulltext vyhledávání
+
+- výsledek přidat do GIT repozitáře a poslat nám odkaz na něj
