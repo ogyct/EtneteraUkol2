@@ -14,5 +14,7 @@ public interface ProductDao {
 	Product updateProduct(int id, String name, String serial);
 	@Transactional
 	Product deleteProduct(int id);
+	@Transactional
+	List<Product> searchProduct(String searchString);
 
 }

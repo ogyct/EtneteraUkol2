@@ -1,11 +1,14 @@
 package cz.etn.etnshop.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import cz.etn.etnshop.dao.Product;
 import cz.etn.etnshop.dao.ProductDao;
 import cz.etn.etnshop.service.ProductService;
 
@@ -51,6 +54,15 @@ public class ProductController {
         
         ModelAndView modelAndView = new ModelAndView("product/list");
         modelAndView.addObject("products", productService.getProducts());
+        return modelAndView;
+    }
+    
+    @RequestMapping("/search")
+    public ModelAndView search(@RequestParam String searchText) {
+        List<Product> listOfProductsFound = productDao.searchProduct(searchText);
+        
+        ModelAndView modelAndView = new ModelAndView("product/list");
+        modelAndView.addObject("products", listOfProductsFound);
         return modelAndView;
     }
 }

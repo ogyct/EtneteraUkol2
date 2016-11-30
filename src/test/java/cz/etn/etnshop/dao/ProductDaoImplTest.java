@@ -1,5 +1,7 @@
 package cz.etn.etnshop.dao;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,37 +12,43 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = { "file:src/main/webapp/WEB-INF/spring-core-config.xml" })
 
 public class ProductDaoImplTest {
-    @Autowired
-    private ProductDao productDao;
+	@Autowired
+	private ProductDao productDao;
 
-    //    @Before
-    //    public void setUp() throws Exception {
-    //    }
-    //
-    //    @Test
-    //    public void testGetProducts() {
-    //        fail("Not yet implemented");
-    //    }
-    //
-    @Test
-    public void testAddProduct() {
-        productDao.addProduct(0, "junit insert", "iiiii");
-        System.out.println("Success");
-    }
+	// @Before
+	// public void setUp() throws Exception {
+	// }
+	//
+	// @Test
+	// public void testGetProducts() {
+	// fail("Not yet implemented");
+	// }
+	//
+	@Test
+	public void testAddProduct() {
+		productDao.addProduct(0, "junit insert", "iiiii");
+		System.out.println("Success");
+	}
 
-    //
-    @Test
-    public void testUpdateProduct() {
-        productDao.updateProduct(1, "Junit update", "uuuuu");
-        System.out.println("Success");
-    }
+	//
+	@Test
+	public void testUpdateProduct() {
+		productDao.updateProduct(1, "junit update", "uuuuu");
+		System.out.println("Success");
+	}
 
-    //    @Test
-    //    public void testDeleteProduct() {
-    //
-    //        productDao.deleteProduct(7);
-    //
-    //        System.out.println("Success");
-    //    }
+	// @Test
+	// public void testDeleteProduct() {
+	//
+	// productDao.deleteProduct(7);
+	//
+	// System.out.println("Success");
+	// }
+	@Test
+	public void testSearch() {
+		@SuppressWarnings("unused")
+		List<Product> list = productDao.searchProduct("junit");
+		return;
+	}
 
 }

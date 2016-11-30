@@ -14,6 +14,11 @@
 
 <div class="container">
 	<h2>Products</h2>
+	<form name="product" method="post"> 
+		<input name="searchText" type="text" value=""/>
+		<input type="submit" value="Search" formaction="/etnshop/product/search"/>
+		<input type="submit" value="Reset search result" formaction="/etnshop/product/list"/>
+	</form>
 	<table class="table">
 		<thead>
 			<tr>
